@@ -19,7 +19,9 @@ var gulp =      require('gulp'),
 //Compile Jade
 gulp.task('html', function(){
     return gulp.src('markup/*.jade')
-        .pipe(jade())
+        .pipe(jade({
+            pretty: true
+        }))
         .pipe(gulp.dest('../deploy/'))
         .pipe(connect.reload());
 });
