@@ -1,7 +1,7 @@
 {
-  "name": "yellit",
+  "name": "Giggle",
   "version": "1.0.0",
-  "description": "Social Sharing for business owners made fast and easy.",
+  "description": "Quick and Easy Web App Building",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

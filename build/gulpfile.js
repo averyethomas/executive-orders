@@ -6,14 +6,11 @@ var path = '';
 
 var gulp =      require('gulp'),
     gutil =     require('gulp-util'),
-    minicss =  require('gulp-minify-css'),
     concat =    require('gulp-concat'),
     jade =      require('gulp-jade'),
     sass =      require('gulp-sass'),
-    minihtml =  require('gulp-minify-html'),
     gmin =      require('gulp-imagemin'),
     ftp =       require('gulp-ftp'),
-    uglify =    require('gulp-uglify'),
     watch =     require('gulp-watch'),
     connect =   require('gulp-connect');
 
@@ -23,7 +20,6 @@ var gulp =      require('gulp'),
 gulp.task('html', function(){
     return gulp.src('markup/**/*.jade')
         .pipe(jade())
-        .pipe(minihtml())
         .pipe(gulp.dest('../deploy/'))
         .pipe(connect.reload());
 });
@@ -31,14 +27,12 @@ gulp.task('html', function(){
 gulp.task('styles', function(){
     return gulp.src('styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
-        .pipe(minicss({compatability: 'ie8'}))
         .pipe(gulp.dest('../deploy/styles/'))
         .pipe(connect.reload());
 });
 
 gulp.task('scripts', function(){
     return gulp.src('scripts/**/*.js')
-        .pipe(uglify())
         .pipe(gulp.dest('../deploy/scripts/'))
         .pipe(connect.reload());
 });
