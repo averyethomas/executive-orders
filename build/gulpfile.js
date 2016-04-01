@@ -18,7 +18,7 @@ var gulp =      require('gulp'),
 
 //Compile Jade
 gulp.task('html', function(){
-    return gulp.src('markup/**/*.jade')
+    return gulp.src('markup/*.jade')
         .pipe(jade())
         .pipe(gulp.dest('../deploy/'))
         .pipe(connect.reload());
@@ -61,7 +61,7 @@ gulp.task('build', function(){
 
 //Minify Images
 gulp.task('default', ['server'], function(){
-    gulp.watch('markup/*.jade', ['html']);
+    gulp.watch('markup/**/*.jade', ['html']);
     gulp.watch('styles/*.scss', ['styles']);
     gulp.watch('scripts/*.js', ['scripts']);
     gulp.watch('images/**/*', ['images']);
