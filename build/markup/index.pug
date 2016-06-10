@@ -1,0 +1,14 @@
+doctype html
+html
+	include includes/header.pug
+
+	body(ng-app="angularApp")
+
+		div.container(ng-controller="mainCtrl")
+
+			div#logo
+				h2 {{hello}}
+				img(src="images/o2TFLcS.jpg")
+
+		include includes/footer.pug
+

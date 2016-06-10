@@ -7,20 +7,22 @@ var path = '';
 var gulp =      require('gulp'),
     gutil =     require('gulp-util'),
     concat =    require('gulp-concat'),
-    jade =      require('gulp-jade'),
+    pug =      require('gulp-pug'),
     sass =      require('gulp-sass'),
     gmin =      require('gulp-imagemin'),
     ftp =       require('gulp-ftp'),
     watch =     require('gulp-watch'),
-    connect =   require('gulp-connect');
+    connect =   require('gulp-connect'),
+    autoprefixer = require('gulp-autoprefixer');
 
 //I want to:
 
 //Compile Jade
 gulp.task('html', function(){
-    return gulp.src('markup/*.jade')
-        .pipe(jade({
-            pretty: true
+    return gulp.src('markup/*.pug')
+        .pipe(pug({
+            pretty: true,
+            basedir: __dirname + '/markup/'
         }))
         .pipe(gulp.dest('../deploy/'))
         .pipe(connect.reload());
@@ -29,6 +31,7 @@ gulp.task('html', function(){
 gulp.task('styles', function(){
     return gulp.src('styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer())
         .pipe(gulp.dest('../deploy/styles/'))
         .pipe(connect.reload());
 });
@@ -40,7 +43,7 @@ gulp.task('scripts', function(){
 });
 
 gulp.task('images', function(){
-    return gulp.src('images/**/*')
+    return gulp.src('images/**/*.{jpg,jpeg,png,gif}')
         .pipe(gmin())
         .pipe(gulp.dest('../deploy/images/'))
         .pipe(connect.reload());
@@ -63,7 +66,7 @@ gulp.task('build', function(){
 
 //Minify Images
 gulp.task('default', ['server'], function(){
-    gulp.watch('markup/**/*.jade', ['html']);
+    gulp.watch('markup/**/*.pug', ['html']);
     gulp.watch('styles/*.scss', ['styles']);
     gulp.watch('scripts/*.js', ['scripts']);
     gulp.watch('images/**/*', ['images']);
