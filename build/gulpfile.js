@@ -15,6 +15,8 @@ var gulp =      require('gulp'),
     connect =   require('gulp-connect'),
     autoprefixer = require('gulp-autoprefixer');
 
+var folder = 'deploy';
+
 //I want to:
 
 //Compile Jade
@@ -24,7 +26,7 @@ gulp.task('html', function(){
             pretty: true,
             basedir: __dirname + '/markup/'
         }))
-        .pipe(gulp.dest('../deploy/'))
+        .pipe(gulp.dest('../' + folder + '/'))
         .pipe(connect.reload());
 });
 //Compiles Sass
@@ -32,20 +34,20 @@ gulp.task('styles', function(){
     return gulp.src('styles/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(autoprefixer())
-        .pipe(gulp.dest('../deploy/styles/'))
+        .pipe(gulp.dest('../' + folder + '/styles/'))
         .pipe(connect.reload());
 });
 
 gulp.task('scripts', function(){
     return gulp.src('scripts/**/*.js')
-        .pipe(gulp.dest('../deploy/scripts/'))
+        .pipe(gulp.dest('../' + folder + '/scripts/'))
         .pipe(connect.reload());
 });
 
 gulp.task('images', function(){
     return gulp.src('images/**/*.{jpg,jpeg,png,gif}')
         .pipe(gmin())
-        .pipe(gulp.dest('../deploy/images/'))
+        .pipe(gulp.dest('../' + folder + '/images/'))
         .pipe(connect.reload());
 });
 
@@ -53,7 +55,7 @@ gulp.task('server', function() {
     return connect.server({
         port: 8181,
         livereload: true,
-        root: '../deploy'
+        root: '../' + folder
     });
 });
 
@@ -73,7 +75,7 @@ gulp.task('default', ['server'], function(){
 });
 
 gulp.task('deploy', function(){
-    return gulp.src('../deploy/**/*')
+    return gulp.src('../' + folder + '/**/*')
         .pipe(ftp({
             host: host,
             user: user,
