@@ -1,0 +1,169 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url("https://fonts.googleapis.com/css?family=Roboto:300,500,700");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 20px auto 0; }
+  body h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px; }
+  body h2 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px; }
+  body h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px; }
+  body h5 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px; }
+  body .presidentSection {
+    padding: 20px;
+    text-align: center; }
+    body .presidentSection p {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      margin-bottom: 20px; }
+      body .presidentSection p:first-of-type {
+        margin-bottom: 10px; }
+    body .presidentSection .executiveOrders {
+      overflow: visible;
+      width: 75%;
+      margin: 0 auto; }
+      body .presidentSection .executiveOrders .order {
+        width: 25px;
+        height: 50px;
+        background-color: #A30000;
+        margin: 0 2px 2px;
+        display: inline-block;
+        position: relative; }
+        body .presidentSection .executiveOrders .order.first100 {
+          background: -webkit-repeating-linear-gradient(135deg, #A30000, #A30000 8px, #fff 8px, #fff 10px);
+          background: repeating-linear-gradient(-45deg, #A30000, #A30000 8px, #fff 8px, #fff 10px); }
+          body .presidentSection .executiveOrders .order.first100:hover {
+            background: -webkit-repeating-linear-gradient(135deg, rgba(163, 0, 0, 0.5), rgba(163, 0, 0, 0.5) 8px, #fff 8px, #fff 10px);
+            background: repeating-linear-gradient(-45deg, rgba(163, 0, 0, 0.5), rgba(163, 0, 0, 0.5) 8px, #fff 8px, #fff 10px); }
+        body .presidentSection .executiveOrders .order .title {
+          display: none;
+          visibility: hidden;
+          width: 200px;
+          height: auto;
+          background-color: #CFCFCF;
+          padding: 10px;
+          position: absolute;
+          z-index: 1;
+          color: #000;
+          top: 55px;
+          text-align: center;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%); }
+          body .presidentSection .executiveOrders .order .title .top {
+            position: absolute;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #CFCFCF;
+            left: 0;
+            right: 0;
+            margin: 0 auto; }
+          body .presidentSection .executiveOrders .order .title P {
+            font-size: 14px;
+            line-height: 17px;
+            margin: 0 0 0; }
+            body .presidentSection .executiveOrders .order .title P.date {
+              margin: 0 0 10px;
+              font-weight: 500; }
+          body .presidentSection .executiveOrders .order .title a {
+            font-weight: 500;
+            color: #A30000;
+            margin: 10px auto 0;
+            display: block; }
+            body .presidentSection .executiveOrders .order .title a:hover {
+              color: #000;
+              text-decoration: none; }
+        body .presidentSection .executiveOrders .order:hover {
+          background-color: rgba(163, 0, 0, 0.5); }
+        body .presidentSection .executiveOrders .order:hover > .title {
+          display: inline-block;
+          visibility: visible; }
+  body .resources {
+    padding: 20px 0;
+    text-align: center; }
+    body .resources ul li {
+      margin: 0 0 15px; }
+      body .resources ul li a {
+        color: #000;
+        font-weight: 300; }
+        body .resources ul li a:hover {
+          color: #A30000;
+          font-weight: 700;
+          text-decoration: none; }
+  body footer {
+    padding: 15px 0;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    text-align: center; }
+    body footer p {
+      font-weight: 300; }
+      body footer p a {
+        font-weight: 500;
+        color: #fff; }
+        body footer p a:hover {
+          text-decoration: none;
+          color: #A30000; }

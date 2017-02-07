@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Executive Orders</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1"><meta property="og:title" content="Title of Page"/>
+<meta property="og:type" content="article"/>
+<meta property="og:url" content="URL of Website"/>
+<meta property="og:image" content="link to image for sharing"/>
+<meta property="og:site_name" content="Site Name"/>
+<meta property="og:description" content="Site Description"/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <link href="styles/style.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.5/angular.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.0/angular-resource.min.js?ver=1.0"></script>
+    <script src="scripts/app.js" type="text/javascript"></script>
+  </head>
+  <body ng-app="angularApp">
+    <div class="container">
+      <h1>Executive Orders
+        <h2>While never directly mentioned in the constitution, executive orders have been used by every president. The concept is drawn from Article II’s mention of a “grant of executive power.”</h2>
+        <h2>Once signed executive orders are considered law. The legislative branch plays no role in passing an executive order and they cannot legally overturn one either. They  may attempt to pass a bill that defunds an order, but the President still has veto power over that bill. However, it may be overturned by the judiciary branch, which has found two executive orders to be unconstitutional. The executive branch also can reverse executive orders put into place by previous administrations.</h2>
+        <h2>Below, each tile represents one executive order. You can hover over it to see the title and date it was signed and click on the tile to read the PDF version of the order(when available). Stripped orders were signed in the respective President’s first 100 days in office.</h2>
+        <h2>Both Bill Clinton and Donald Trump signed executive orders on their first day in office. The the last 3 presidents signed an average of 14 executive orders in their first 100 days in office.</h2>
+        <div class="presidentSection" ng-controller="trumpCtrl">
+          <h3>Donald Trump</h3>
+          <p>2017 - Present</p>
+          <p>Total : {{ trump.results.length }}</p>
+          <div class="executiveOrders">
+            <div class="order" ng-repeat="order in trump.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  &lt;= (onehundredthday | date:'yyyy/MM/dd')}">
+              <div class="title">
+                <div class="top"></div>
+                <p class="date">{{ order.signing_date | date : 'MMMM dd, yyyy' }}</p>
+                <p>{{ order.title }}</p><a ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank">VIEW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="presidentSection" ng-controller="obamaCtrl">
+          <h3>Barack Obama</h3>
+          <p>2008 - 2017</p>
+          <p>Total : {{ obama.results.length }}</p>
+          <div class="executiveOrders">
+            <div class="order" ng-repeat="order in obama.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  &lt;= (onehundredthday | date:'yyyy/MM/dd')}">
+              <div class="title">
+                <div class="top"></div>
+                <p class="date">{{ order.signing_date | date : 'MMMM dd, yyyy' }}</p>
+                <p>{{ order.title }}</p><a ng-show="order.pdf_url != null" ng-hide="order.pdf.url = null" ng-href="{{order.pdf_url}}" target="_blank">VIEW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="presidentSection" ng-controller="bushCtrl">
+          <h3>George W. Bush</h3>
+          <p>2001 - 2008</p>
+          <p>Total : {{ bush.results.length }}</p>
+          <div class="executiveOrders">
+            <div class="order" ng-repeat="order in bush.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  &lt;= (onehundredthday | date:'yyyy/MM/dd')}">
+              <div class="title">
+                <div class="top"></div>
+                <p class="date">{{ order.signing_date | date : 'MMMM dd, yyyy' }}</p>
+                <p>{{ order.title }}</p><a ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank">VIEW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="presidentSection" ng-controller="clintonCtrl">
+          <h3>Bill Clinton</h3>
+          <p>1994 - 2001</p>
+          <p>Total : {{ clintonTotal.length }}</p>
+          <div class="executiveOrders">
+            <div class="order" ng-repeat="order in clintonTotal" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  &lt;= (onehundredthday | date:'yyyy/MM/dd')}">
+              <div class="title">
+                <div class="top"></div>
+                <p class="date">{{ order.signing_date| date : 'MMMM dd, yyyy' }}</p>
+                <p>{{ order.title }}</p><a ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank">VIEW</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="resources">
+          <h5>Resources</h5>
+          <ul>
+            <li><a href="https://www.federalregister.gov/developers/api/v1">Federal Register API [DATA]</a></li>
+            <li><a href="https://www.archives.gov/federal-register/executive-orders/1993-clinton.html">National Archives [DATA for Bill Clinton in 1993]</a></li>
+            <li><a href="http://www.cnbc.com/2014/01/28/executive-orders-what-they-are-and-how-they-work.html">CNBC: Executive Orders Coming? Here's How They Work</a></li>
+            <li><a href="https://www.senate.gov/civics/constitution_item/constitution.htm">The Constitution of the United States of America</a></li>
+          </ul>
+        </div>
+      </h1>
+    </div>
+    <footer>
+      <p>Website By<a href="http://averyethomas.com"> Avery Thomas</a></p>
+    </footer>
+  </body>
+</html>

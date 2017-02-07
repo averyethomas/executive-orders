@@ -50,3 +50,173 @@ table {
 }
 
 //Page styles
+
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,500,700');
+
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 20px auto 0;
+  h1 {
+    font-size: 40px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h2 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  h3 {
+    font-size: 26px;
+    font-weight: 700;
+    margin-bottom: 10px;
+  }
+  h5{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 20px;
+  }
+  .presidentSection {
+    padding: 20px;
+    text-align: center;
+    p {
+      font-size: 18px;
+      line-height: 24px;
+      font-weight: 300;
+      margin-bottom: 20px;
+      &:first-of-type{
+        margin-bottom: 10px;
+      }
+    }
+    .executiveOrders {
+      overflow: visible;
+      width: 75%;
+      margin: 0 auto;
+
+      .order {
+        width: 25px;
+        height: 50px;
+        background-color: #A30000;
+        margin: 0 2px 2px;
+        display: inline-block;
+        position: relative;
+
+        &.first100{
+          background: repeating-linear-gradient(-45deg, #A30000, #A30000 8px, #fff 8px, #fff 10px);
+
+          &:hover{
+            background: repeating-linear-gradient(-45deg,  rgba(163, 0, 0, 0.5), rgba(163, 0, 0, 0.5) 8px, #fff 8px, #fff 10px);
+
+          }
+        }
+
+        .title{
+          display: none;
+          visibility: hidden;
+          width: 200px;
+          height: auto;
+          background-color: #CFCFCF;
+          padding: 10px;
+          position: absolute;
+          z-index: 1;
+          color: #000;
+          top: 55px;
+          text-align: center;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          -moz-transform: translateX(-50%);
+          -ms-transform: translateX(-50%);
+          -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+
+          .top{
+            position: absolute;
+            top: -10px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 10px solid #CFCFCF;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+          }
+          P{
+            font-size: 14px;
+            line-height: 17px;
+            margin: 0 0 0;
+            &.date{
+              margin: 0 0 10px;
+              font-weight: 500;
+            }
+          }
+
+          a{
+            font-weight: 500;
+            color: #A30000;
+            margin: 10px auto 0;
+            display: block;
+
+            &:hover{
+              color: #000;
+              text-decoration: none;
+            }
+          }
+        }
+
+        &:hover{
+          background-color: rgba(163, 0, 0, 0.5);
+        }
+
+        &:hover > .title{
+          display: inline-block;
+          visibility: visible;
+        }
+      }
+    }
+  }
+  .resources{
+    padding: 20px 0;
+    text-align: center;
+
+    ul{
+      li{
+        margin: 0 0 15px;
+
+        a{
+          color: #000;
+          font-weight: 300;
+
+          &:hover{
+            color: #A30000;
+            font-weight: 700;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+  footer{
+    padding: 15px 0;
+    background-color: #000;
+    color: #fff;
+    width: 100%;
+    text-align: center;
+    p{
+      font-weight: 300;
+
+      a{
+        font-weight: 500;
+        color: #fff;
+
+        &:hover{
+          text-decoration: none;
+          color: #A30000;
+        }
+      }
+    }
+  }
+}
