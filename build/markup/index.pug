@@ -17,7 +17,7 @@ html
 					p 2017 - Present
 					p Total : {{ trump.results.length }}
 					div.executiveOrders
-						div.order(ng-repeat="order in trump.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.order(on-touch="mobileHover" ng-repeat="order in trump.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
 							div.title
 								div.top
 								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
@@ -28,7 +28,7 @@ html
 					p 2008 - 2017
 					p Total : {{ obama.results.length }}
 					div.executiveOrders
-						div.order(ng-repeat="order in obama.results"   ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.order(on-touch="mobileHover" ng-repeat="order in obama.results"   ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
 							div.title
 								div.top
 								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
@@ -39,7 +39,7 @@ html
 					p 2001 - 2008
 					p Total : {{ bush.results.length }}
 					div.executiveOrders
-						div.order(ng-repeat="order in bush.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.order(on-touch="mobileHover" ng-repeat="order in bush.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
 							div.title
 								div.top
 								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
@@ -50,7 +50,7 @@ html
 					p 1994 - 2001
 					p Total : {{ clintonTotal.length }}
 					div.executiveOrders
-						div.order(ng-repeat="order in clintonTotal" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.order(on-touch="mobileHover" ng-repeat="order in clintonTotal" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
 							div.title
 								div.top
 								p.date {{ order.signing_date| date : 'MMMM dd, yyyy' }}
