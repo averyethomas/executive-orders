@@ -7,68 +7,68 @@ html
 		div.container
 
 			h1 Executive Orders
-				h2 While never directly mentioned in the constitution, executive orders have been used by every president. The concept is drawn from Article II’s mention of a “grant of executive power.”
-				h2 Once signed executive orders are considered law. The legislative branch plays no role in passing an executive order and they cannot legally overturn one either. They  may attempt to pass a bill that defunds an order, but the President still has veto power over that bill. However, it may be overturned by the judiciary branch, which has found two executive orders to be unconstitutional. The executive branch also can reverse executive orders put into place by previous administrations.
-				h2 Both Bill Clinton and Donald Trump signed executive orders on their first day in office. The the last 3 presidents signed an average of 14 executive orders in their first 100 days in office.
-				h2 Below, each tile represents one executive order. You can click or hover over it to see the date it was signed, the title of the order and a link to a pdf version of the order(when available). Stripped orders were signed in the respective President’s first 100 days in office.
+			h2 While never directly mentioned in the constitution, executive orders have been used by every president. The concept is drawn from Article II’s mention of a “grant of executive power.”
+			h2 Once signed executive orders are considered law. The legislative branch plays no role in passing an executive order and they cannot legally overturn one either. They  may attempt to pass a bill that defunds an order, but the President still has veto power over that bill. However, it may be overturned by the judiciary branch, which has found two executive orders to be unconstitutional. The executive branch also can reverse executive orders put into place by previous administrations.
+			h2 Both Bill Clinton and Donald Trump signed executive orders on their first day in office. The the last 3 presidents signed an average of 14 executive orders in their first 100 days in office.
+			h2 Below, each tile represents one executive order. You can click or hover over it to see the date it was signed, the title of the order and a link to a pdf version of the order(when available). Stripped orders were signed in the respective President’s first 100 days in office.
 
-	div.presidentSection(ng-controller="trumpCtrl")
-					h3 Donald Trump
-					p 2017 - Present
-					p Total : {{ trump.results.length }}
-					div.executiveOrders
-						div.order(on-touch="mobileHover" ng-repeat="order in trump.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
-							div.title
-								div.top
-								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
-								p {{ order.title }}
-								a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
-				div.presidentSection(ng-controller="obamaCtrl")
-					h3 Barack Obama
-					p 2008 - 2017
-					p Total : {{ obama.results.length }}
-					div.executiveOrders
-						div.order(on-touch="mobileHover" ng-repeat="order in obama.results"   ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
-							div.title
-								div.top
-								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
-								p {{ order.title }}
-								a(ng-show="order.pdf_url != null" ng-hide="order.pdf.url = null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
-				div.presidentSection(ng-controller="bushCtrl")
-					h3 George W. Bush
-					p 2001 - 2008
-					p Total : {{ bush.results.length }}
-					div.executiveOrders
-						div.order(on-touch="mobileHover" ng-repeat="order in bush.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
-							div.title
-								div.top
-								p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
-								p {{ order.title }}
-								a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
-				div.presidentSection(ng-controller="clintonCtrl")
-					h3 Bill Clinton
-					p 1994 - 2001
-					p Total : {{ clintonTotal.length }}
-					div.executiveOrders
-						div.order(on-touch="mobileHover" ng-repeat="order in clintonTotal" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
-							div.title
-								div.top
-								p.date {{ order.signing_date| date : 'MMMM dd, yyyy' }}
-								p {{ order.title }}
-								a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
+			div.presidentSection(ng-controller="trumpCtrl")
+				h3 Donald Trump
+				p 2017 - Present
+				p Total : {{ trump.results.length }}
+				div.executiveOrders
+					div.order(on-touch="mobileHover" ng-repeat="order in trump.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.title
+							div.top
+							p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
+							p {{ order.title }}
+							a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
+			div.presidentSection(ng-controller="obamaCtrl")
+				h3 Barack Obama
+				p 2008 - 2017
+				p Total : {{ obama.results.length }}
+				div.executiveOrders
+					div.order(on-touch="mobileHover" ng-repeat="order in obama.results"   ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.title
+							div.top
+							p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
+							p {{ order.title }}
+							a(ng-show="order.pdf_url != null" ng-hide="order.pdf.url = null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
+			div.presidentSection(ng-controller="bushCtrl")
+				h3 George W. Bush
+				p 2001 - 2008
+				p Total : {{ bush.results.length }}
+				div.executiveOrders
+					div.order(on-touch="mobileHover" ng-repeat="order in bush.results" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.title
+							div.top
+							p.date {{ order.signing_date | date : 'MMMM dd, yyyy' }}
+							p {{ order.title }}
+							a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
+			div.presidentSection(ng-controller="clintonCtrl")
+				h3 Bill Clinton
+				p 1994 - 2001
+				p Total : {{ clintonTotal.length }}
+				div.executiveOrders
+					div.order(on-touch="mobileHover" ng-repeat="order in clintonTotal" ng-class="{'first100': (order.signing_date | date:'yyyy/MM/dd')  <= (onehundredthday | date:'yyyy/MM/dd')}")
+						div.title
+							div.top
+							p.date {{ order.signing_date| date : 'MMMM dd, yyyy' }}
+							p {{ order.title }}
+							a(ng-show="order.pdf_url != null" ng-href="{{order.pdf_url}}" target="_blank") VIEW
 
-				div.resources
-					h5 Resources
-					ul
-						li
-							a(href="https://www.federalregister.gov/developers/api/v1") Federal Register API [DATA]
-						li
-							a(href="https://www.archives.gov/federal-register/executive-orders/1993-clinton.html") National Archives [DATA for Bill Clinton in 1993]
-						li
-							a(href="http://www.cnbc.com/2014/01/28/executive-orders-what-they-are-and-how-they-work.html") CNBC: Executive Orders Coming? Here's How They Work
-						li
-							a(href="https://www.senate.gov/civics/constitution_item/constitution.htm") The Constitution of the United States of America
+			div.resources
+				h5 Resources
+				ul
+					li
+						a(href="https://www.federalregister.gov/developers/api/v1") Federal Register API [DATA]
+					li
+						a(href="https://www.archives.gov/federal-register/executive-orders/1993-clinton.html") National Archives [DATA for Bill Clinton in 1993]
+					li
+						a(href="http://www.cnbc.com/2014/01/28/executive-orders-what-they-are-and-how-they-work.html") CNBC: Executive Orders Coming? Here's How They Work
+					li
+						a(href="https://www.senate.gov/civics/constitution_item/constitution.htm") The Constitution of the United States of America
 
 
-		include includes/footer.pug
+	include includes/footer.pug
 
